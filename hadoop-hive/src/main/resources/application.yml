@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: hadoop-hive
+server:
+  port: 9900
+
+hive:
+  url: jdbc:hive2://192.168.2.3:10000/hivedb
+  username: roothost
+  password: 3@mz32mu7JhQ$ATu
+  driver-class-name: org.apache.hive.jdbc.HiveDriver
+  filters: stat
+  initialSize: 2
+  maxWait: 60000
+  timeBetweenEvictionRunsMillis: 60000
+  minEvictableIdleTimeMillis: 300000
+  validationQuery: SELECT 1
+  testWhileIdle: true
+  testOnBorrow: false
+  testOnReturn: false
+  poolPrepareStaquotements: false
+  maxPoolPrepareStatementPerConnectionSize: 200
+
+
+hbase:
+  zookeeper:
+    quorum: 192.168.2.3
+    property:
+      clientPort: 2181
+zookeeper:
+  znode:
+    parent: /hbase
